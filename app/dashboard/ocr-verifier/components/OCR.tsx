@@ -59,7 +59,7 @@ export default function OCRV() {
     formData.append("file", file);
 
     try {
-      const response = await axios.post(`http://127.0.0.1:5000/ocr`, formData, {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_PYTHON_SERVER_URL}/ocr`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
